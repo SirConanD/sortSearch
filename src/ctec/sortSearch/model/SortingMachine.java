@@ -1,5 +1,7 @@
 package ctec.sortSearch.model;
 
+import ctec.sortSearch.controller.*;
+
 public class SortingMachine
 {
 	private long startTime;
@@ -139,7 +141,7 @@ public class SortingMachine
 	
 	public void quickSort()
 	{
-		
+		quickSort(fillTheIntArray, minimumPosition, maximumPosition);
 	}
 	
 	/**
