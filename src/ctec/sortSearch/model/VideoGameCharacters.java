@@ -3,14 +3,14 @@ package ctec.sortSearch.model;
 public class VideoGameCharacters implements Comparable
 {
 	private String name;
-	private String gameSeries;
+	private int yearBorn;
 	private boolean isOld;
 	
 	
-	public VideoGameCharacters(String name, String gameSeries, boolean isOld)
+	public VideoGameCharacters(String name, int yearBorn, boolean isOld)
 	{
 		this.name = name;
-		this.gameSeries = gameSeries;
+		this.yearBorn = yearBorn;
 		this.isOld = isOld;
 	}
 	
@@ -19,9 +19,9 @@ public class VideoGameCharacters implements Comparable
 		return name;
 	}
 	
-	public String getGameSeries()
+	public int getYearBorn()
 	{
-		return gameSeries;
+		return yearBorn;
 	}
 	
 	public boolean isOld()
@@ -34,9 +34,9 @@ public class VideoGameCharacters implements Comparable
 		this.name = name;
 	}
 	
-	public void setGameSeries(String gameSeries)
+	public void setYearBorn(int yearBorn)
 	{
-		this.gameSeries = gameSeries;
+		this.yearBorn = yearBorn;
 	}
 	
 	public void setIsOld(boolean isOld)
@@ -49,7 +49,7 @@ public class VideoGameCharacters implements Comparable
 	{
 		String characterString = "";
 		characterString += "Hello my name is " + name + ".";
-		characterString += "I am from the " + gameSeries + " game series and";
+		characterString += "I was born  " + yearBorn + " and ";
 		if(isOld)
 		{
 			characterString += "I am an old character with many games.";

@@ -2,12 +2,14 @@ package ctec.sortSearch.controller;
 
 import ctec.sortSearch.model.SortingMachine;
 import ctec.sortSearch.model.*;
+import two.demensions.controller.*;
 
 public class sortSearchController
 {
 	private int [] integrs;
 	private double [] reals;
 	private String [] words;
+	private VideoGameCharacters [] myCharacter;
 	private SortingMachine mySorter;
 	
 	
@@ -27,7 +29,7 @@ public class sortSearchController
 		fillTheArrays();
 		mySorter.selectionSort(integrs);
 		System.out.println(mySorter.sortingTime(mySorter.getSortTime()));
-		mySorter.selectionSort(myCharacters);
+		mySorter.selectionSort(myCharacter);
 		System.out.println(mySorter.sortingTime(mySorter.getSortTime()));
 	}
 	
@@ -39,19 +41,19 @@ public class sortSearchController
 		fillTheIntArray();
 //		fillTheDoubleArray();
 		fillTheStringArray();
-		fillTheVideoGameCharacterArray();
+		fillTheVideoGameCharactersArray();
 	}
 	
-	private void fillTheVideoGameCharacterArrray()
+	private void fillTheVideoGameCharactersArray()
 	{
-		myCharacter = new VideoGameCharacter[30];
+		myCharacter = new VideoGameCharacters[30];
 		for(int index = 0; index < myCharacter.length; index ++)
 		{
 			{
 				String name = index + "Mario";
-				String gameSeries = index + "Super Mario Bros.";
+				int yearBorn = (int) (Math.random() *10);
 				boolean isOld = true;
-				myCharacter[index] = new Character(name, gameSeries, isOld);
+				myCharacter[index] = new Character(name, yearBorn, isOld);
 			}
 		}
 	}

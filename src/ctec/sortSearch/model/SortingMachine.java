@@ -53,10 +53,10 @@ public class SortingMachine
 		return toBeSorted;
 	}
 	
-	public VideoGameCharacters [] selectionSort(VideoGameCharacter [] sortTheCharacters)
+	public VideoGameCharacters [] selectionSort(VideoGameCharacters [] sortTheCharacters)
 	{
 		int maximumPosition;
-		VideoGameCharacter maximum;
+		VideoGameCharacters maximum;
 		startTime = System.currentTimeMillis();
 		for(int position = 0; position < sortTheCharacters.length; position++)
 		{
@@ -135,6 +135,11 @@ public class SortingMachine
 		int temp = array[position];
 		array[position] = array[change];
 		array[change] = temp;
+	}
+	
+	public void quickSort()
+	{
+		
 	}
 	
 	/**
