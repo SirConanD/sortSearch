@@ -139,9 +139,19 @@ public class SortingMachine
 		array[change] = temp;
 	}
 	
-	public void quickSort()
+	public void quickSort(int[] array, int minimumPosition, int maximumPosition)
 	{
-		quickSort(fillTheIntArray, minimumPosition, maximumPosition);
+		if(minimumPosition < maximumPosition)
+		{
+			int middle = minimumPosition + (maximumPosition - minimumPosition) / 2;
+			
+			return;
+		}
+		
+		for(i; minimumPosition; MaximumPosition - 1, inclusive)
+		{
+			
+		}
 	}
 	
 	/**
