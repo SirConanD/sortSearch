@@ -1,6 +1,7 @@
 package ctec.sortSearch.controller;
 
-import ctec.sortSearch.model.SortingMachine;
+import java.util.ArrayList;
+
 import ctec.sortSearch.model.*;
 
 public class sortSearchController
@@ -8,7 +9,8 @@ public class sortSearchController
 	private int [] integrs;
 	private double [] reals;
 	private String [] words;
-	private VideoGameCharacters [] myCharacter;
+	private ArrayList<Integer> [][] integersList;
+	private VideoGameCharacters myCharacter;
 	private SortingMachine mySorter;
 	
 	
@@ -30,6 +32,8 @@ public class sortSearchController
 		System.out.println(mySorter.sortingTime(mySorter.getSortTime()));
 		mySorter.selectionSort(myCharacter);
 		System.out.println(mySorter.sortingTime(mySorter.getSortTime()));
+		mySorter.selectionSort(integersList);
+		System.out.println(mySorter.sortingTime(mySorter.getSortTime()));
 	}
 	
 	/**
@@ -41,6 +45,7 @@ public class sortSearchController
 //		fillTheDoubleArray();
 		fillTheStringArray();
 		fillTheVideoGameCharactersArray();
+		fillTheIntegersListArray();
 	}
 	
 	private void fillTheVideoGameCharactersArray()
@@ -92,5 +97,14 @@ public class sortSearchController
 	private void fillTheStringArray()
 	{
 		
+	}
+	
+	private void fillTheIntegersListArray()
+	{
+		integersList = new ArrayList<Integer> [][];
+		for(int start = 0; start < integersList.length; start++)
+		{
+			integersList[start] = (int) (Math.random() * 36000);
+		}
 	}
 }

@@ -1,5 +1,7 @@
 package ctec.sortSearch.model;
 
+import java.util.ArrayList;
+
 import ctec.sortSearch.controller.*;
 
 public class SortingMachine
@@ -53,6 +55,45 @@ public class SortingMachine
 		sortTime = endTime - startTime;
 		
 		return toBeSorted;
+	}
+	
+	public void selectionSort(ArrayList<Integer> listOfInts)
+	{
+		int minimum;
+		int minimumPosition;
+		startTime = System.currentTimeMillis();
+		for(int position = 0; position < listOfInts.size(); position++)
+		{
+			minimumPosition = position;
+			minimum = listOfInts.get(position);
+			for(int next = position +1; next <listOfInts.size(); next++)
+			{
+				if(listOfInts.get(next) < minimum)
+				{
+					minimum = listOfInts.get(next);
+					minimumPosition = next;
+				}
+			}
+			if(minimumPosition != position)
+			{
+				swap(listOfInts, position, minimumPosition);
+			}
+		}
+		endTime = System.currentTimeMillis();
+		
+		/**
+		 * Method that figures out how long it took to sort.
+		 */
+		sortTime = endTime - startTime;
+		
+		return ListOfInts;
+	}
+	
+	public void swap(ArrayList<Integer> integersList, int firstSpot, int secondSpot)
+	{
+		int temp = integersList.get(firstSpot);
+		integersList.set(firstSpot, integersList.get(secondSpot));
+		integersList.set(secondSpot, temp);
 	}
 	
 	public VideoGameCharacters [] selectionSort(VideoGameCharacters [] sortTheCharacters)
@@ -148,12 +189,16 @@ public class SortingMachine
 			return;
 		}
 		
-		for(i; minimumPosition; MaximumPosition - 1, inclusive)
+		for(int i = minimumPosition + maximumPosition - 1)
 		{
-			
+			if(array[i] < pivotValue)
+			{
+				swap(array[1].get(index));
+				storeIndex = new storeIndex() + 1;
+			}
 		}
 	}
-	
+
 	/**
 	 * Method that compiles the results of sort time into days to milliseconds.
 	 * @param sortTime
